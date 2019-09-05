@@ -3,7 +3,8 @@
 const db =require("../database")
 
 let creatdefult = (cb) => {
-  db.parkdata.create([{numpark: 1,
+  db.parkdata.create([
+    {numpark: 1,
     status: false},
    { numpark: 2,
     status: false},
@@ -18,7 +19,9 @@ let creatdefult = (cb) => {
     {numpark: 7,
     status: false},
     {numpark: 8,
-    status: false}],
+    status: false},
+    {numpark: 9,
+      status: false}],
      (err, data) => {
     if (err) {
       cb(err)
@@ -36,6 +39,7 @@ db.parkdata.find({}, (err, data) => {
       cb(err);
     } else {
       console.log("data:", data);
+      console.log("_______________________________________________")
       cb(data);
     }
   });
@@ -64,16 +68,38 @@ db.parkdata.find({}, (err, data) => {
 
 
   
-   let  updatepark = (cb,isvalid) => {
-      db.parkdata.updateOne( {numpark:isvalid} ,  { $set: { status: true }}, (err, data) => {
+  
+    let  updatepark = (cb,isvalid,statuss) => {
+      console.log(isvalid, statuss);
+
+      db.parkdata.updateMany( {numpark:isvalid} ,  { $set: { status:statuss }}, (err, data) => {
         if (err) {
           cb(err);
         } else {
           console.log("data:", data);
+          console.log("_______________________________________________")
+
           getallpark(cb);
         }
       });
     };
+
+
+
+    // let updatepark = (cb,isvalid,statuss) => {
+    //   console.log(isvalid, statuss);
+
+    //   console.log(db.parkdata);
+    //   db.parkdata.updateMany({numpark: "1"}, {$set: {status: true}}, (err, data) => {
+    //     if(err) cb(err);
+    //     else {
+    //       console.log('abd',  data);
+    //       getallpark(cb);
+    //     }
+    //   } )
+
+     
+    // };
 
 
 

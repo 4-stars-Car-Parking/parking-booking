@@ -8,7 +8,7 @@ let creatdefult = (cb) => {
   db.userdata.create({name: "yasmin",
     phone: 123456655,
     balance:5,
-    password:"45896ttt"},
+    password:"123456"},
      (err, data) => {
     if (err) {
       cb(err)

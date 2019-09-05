@@ -32,6 +32,13 @@ export default class Home extends Component {
          <img src="https://cdn.dribbble.com/users/2486453/screenshots/5646776/sjoerdverbeek-schiphol-icondesign-large-parking.png"
           alt="logo" style={{width:"120px"}}></img>
       </div>
+
+      <Link to='/loginadmin'>
+         <div style={{marginRight:"15px",marginTop:'30px'}}>
+         <button type="button" className="btn btn-primary btn-md" >LogIn Admin</button>
+         </div>
+      </Link> 
+
       <Link to='/login'>
          <div style={{marginRight:"15px",marginTop:'30px'}}>
          <button type="button" className="btn btn-primary btn-md" >LogIn</button>

@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 //import { browserHistory, Router, Route, IndexRoute } from 'react-router'
 // import { withRouter } from "react-router";
 import {Link} from 'react-router-dom';
-import Row from './ParkRow';
-import { BrowserRouter as Router } from 'react-router-dom';
+//import Row from './ParkRow';
+//import { BrowserRouter as Router } from 'react-router-dom';
 
-class LogIn extends Component {
+class LogInadmn extends Component {
   state = {
     Name: '',
     Password: '',
@@ -65,4 +65,4 @@ class LogIn extends Component {
   }
 }
 
-export default LogIn;
+export default LogInadmn;

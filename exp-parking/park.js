@@ -4,7 +4,7 @@ const cors = require("cors");
 var router = express.Router();
 
 
-const mongo =require ("../db-parking/parkdb")
+const mongo = require("../db-parking/parkdb")
 
 
 
@@ -30,14 +30,18 @@ router.get('/false', (req, res) => {
 
 
 /////////roaa
-router.put('/false/:isvalid', (req, res) => {
+router.put('/false/:isvalid/:status', (req, res) => {
 
-  let isvalid = encodeURIComponent(req.params.isvalid);
-  console.log("update",isvalid)
+  let isvalid = req.params.isvalid
+  // let isvalid = parseInt(req.params.isvalid) 
+  let status = JSON.parse(req.params.status)
+  console.log("update", isvalid, status);
+  console.log("update", typeof isvalid, typeof status)
+
 
   mongo.updatepark((result) => {
     res.json(result);
-  },isvalid)
+  }, isvalid, status)
 });
 
 
@@ -47,21 +51,11 @@ router.put('/false/:isvalid', (req, res) => {
 
 /////////hala
 router.get('/all', (req, res) => {
-   ////hala
- mongo.getallpark((result) => {
+  ////hala
+  mongo.getallpark((result) => {
     res.json(result);
-  }) 
-  });
-  
-
-
-
-
-
-
-
-
-
+  })
+});
 
 
 module.exports = router;

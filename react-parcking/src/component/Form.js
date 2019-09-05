@@ -26,15 +26,15 @@ export default class Form extends Component{
     //    ], 
        
     //   }
-    state={
-      show:false
-    }
+    // state={
+    //   show:false
+    // }
      
-   handelhide=()=>{
-        this.setState({
-          show:false
-        })
-   }
+  //  handelhide=()=>{
+  //       this.setState({
+  //         show:false
+  //       })
+  //  }
      
 
 
@@ -43,9 +43,13 @@ export default class Form extends Component{
     //     show:false
     //   })
     // }
-    onclick=()=>{
-      this.props.getPark.bind(this)
-      console.log("some thing must be done ")
+
+    
+    // onclick=()=>{
+    //   this.props.getPark.bind(this)
+    //   console.log("some thing must be done ")
+
+
       // handelhide()
       // handelhide=()=>{
       //   this.setState({
@@ -55,7 +59,7 @@ export default class Form extends Component{
       // this.setState({
       //   show:false
       // })
-    }
+    
        
 
     //   money=(timer)=>{
@@ -89,13 +93,12 @@ export default class Form extends Component{
             <input type="number" name="timer" min="1" max="8" onChange={this.Booking}/> 
             </label> */}
             
-            <button   type="button"   className="btn btn-warning btn-lg my-1 mr-2 button1" onClick={this.onclick} >Booking</button>
+            <button   type="button"   className="btn btn-warning btn-lg my-1 mr-2 button1" onClick={this.props.getPark} >Booking</button>
               
             <br/>
             
-           <button type="button" className="btn btn-warning btn-lg my-1 mr-1 button2"   onClick={this.props.updatabalance} > confirmation</button>
+           <button type="button" className="btn btn-warning btn-lg my-1 mr-1 button2"   onClick={this.props.cleartime} > confirmation</button>
 
           </>
         );
-      }
-}
+      }}
